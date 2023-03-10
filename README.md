@@ -6,7 +6,7 @@ This is a repository dedicated to generating the IRGSC for the A0 observations o
 
 ### Installation
 ```
-pip install insist-IRGSC
+pip install IRGSC
 ```
 
 # Usage
