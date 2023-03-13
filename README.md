@@ -12,6 +12,11 @@ pip install tmt-IRGSC
 # Usage
 This python package is made to generate a catalog of the NIR magnitudes of the stellar sources in the sky. The class irgsc requires four inputes: R.A. (degrees, float), Decl. (degrees, float) , search radius (arcminutes, float), validate (bool). For a given field, the code performs a cone search around the coordinates with the given search radius and obtains the optical photometry and information flags of the sources from PANSTARRS DR2 (Chambers et.al. 2016) obtains the Gaia DR3 (Gaia collaboration et.al. 2022) for these sources. The code then seperates the stars and galaxies in the data, models the optical colors of the stellar sources using the Kurucz (Kurucz 1992a,b, 1993), CAstelli-Kurucz (Castelli & Kurucz 2003) and Phoenix/NextGen (Hauschildt 1999a,b) and computes the NIR magnitudes for them.
 
+```
+from tmt-irgsc import irgsc
+ic = irgsc(ra = None, dec = None, search_radius = None, validate=False)
+```
+
 If validate is True then the code also obtains the observed NIR UKIDSS data for the given field (default is False). This data is then used to compare the observed and computed NIR magnitudes for the source.
 
 
